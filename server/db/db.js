@@ -3,10 +3,10 @@ const validator = require("validator");
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect("mongodb://localhost:27017/sharefile")
+  .connect(process.env.db_con)
   .then(() => {
     console.log("connected");
   })
   .catch((err) => {
-    console.log("Not connected");
+    console.log(err);
   });

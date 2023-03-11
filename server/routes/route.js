@@ -6,9 +6,9 @@ const upload = multer({ dest: "uploads/" });
 var cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: "dbusj0vem",
-  api_key: "481993524113828",
-  api_secret: "zAME0x5X6Mgcr8ELcNpao1A3Oyg",
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret,
   secure: true,
 });
 
