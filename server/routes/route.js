@@ -12,7 +12,7 @@ cloudinary.config({
   secure: true,
 });
 
-router.post("/api/upload", upload.single("Myfile"), async (req, res) => {
+router.post("/upload", upload.single("Myfile"), async (req, res) => {
   try {
     if (!req.file) {
       return res.status(500).send("File not uploaded");
@@ -40,7 +40,7 @@ router.post("/api/upload", upload.single("Myfile"), async (req, res) => {
   }
 });
 
-router.get("/api/upload/:id", async (req, res) => {
+router.get("/upload/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const file = await Fileschema.findById(id);
