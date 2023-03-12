@@ -2,13 +2,13 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const { Fileschema } = require("../models/file");
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "./../uploads/" });
 var cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: process.env.cloud_name,
-  api_key: process.env.api_key,
-  api_secret: process.env.api_secret,
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
   secure: true,
 });
 
