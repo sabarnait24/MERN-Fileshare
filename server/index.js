@@ -13,11 +13,11 @@ app.use(express.json());
 
 app.use("/", require("./routes/route"));
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV !== "production") {
   console.log("In production stage");
-  app.use(express.static(path.resolve(__dirname, "client", "build")))
+  app.use(express.static(path.resolve(__dirname,'../', "client", "build")))
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname,'../', "client", "build", "index.html"));
   });
 }
 
