@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
 require('dotenv').config();
-const db = require("./db/db");
+// const db = require("./db/db");
 const path = require('path');
 
 
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
-app.use("/api", require("./routes/route"));
+// app.use("/api", require("./routes/route"));
 
 app.listen(port, () => {
   console.log(`connection is successful at ${port}`);
