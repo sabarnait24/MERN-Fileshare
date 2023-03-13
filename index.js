@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
-// app.use("/api", require("./routes/route"));
+app.use("/api", require("./routes/route"));
 
 app.listen(port, () => {
   console.log(`connection is successful at ${port}`);
