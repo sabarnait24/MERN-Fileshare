@@ -2,7 +2,7 @@ const express = require("express");
 const multer = require("multer");
 const router = express();
 const { Fileschema } = require("./../models/file");
-const upload = multer({ dest: "./../uploads" });
+// const upload = multer({ dest: "./../uploads" });
 var cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
@@ -12,7 +12,7 @@ cloudinary.config({
   secure: true,
 });
 
-router.post("/upload", upload.single("Myfile"), async (req, res) => {
+router.post("/upload", /*upload.single("Myfile"),*/ async (req, res) => {
   try {
     if (!req.file) {
       return res.status(500).send("File not uploaded");
