@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = require("multer");
+// const multer = require("multer");
 const router = express();
 const { Fileschema } = require("./../models/file");
 // const upload = multer({ dest: "./../uploads" });
