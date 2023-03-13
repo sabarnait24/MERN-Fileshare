@@ -12,6 +12,7 @@ const route = require("./routes/route");
 app.use(cors());
 app.use(express.json());
 
+app.use("/api", route);
 
 if (process.env.NODE_ENV === "production") {
   console.log("In production stage");
@@ -21,7 +22,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/api", route);
 
 app.listen(port, () => {
   console.log(`connection is successful at ${port}`);
