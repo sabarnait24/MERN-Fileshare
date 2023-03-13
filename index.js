@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// app.use("/api", route);
+app.use("/api", route);
 
 app.listen(port, () => {
   console.log(`connection is successful at ${port}`);
